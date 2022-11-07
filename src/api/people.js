@@ -1,6 +1,6 @@
 export const getPeople = async(page)=>{
   try{
-    const response = await fetch(`http://swapi.dev/api/people/?page=${page}`);
+    const response = await fetch(`https://swapi.dev/api/people/?page=${page}`);
     if(!response.ok){
       throw new NetworkError();
     }
@@ -19,7 +19,7 @@ class NetworkError extends Error{
 }
 
 export const getCharacter = async(id=1)=>{
-  const response = await fetch(`http://swapi.dev/api/people/${id}/`);
+  const response = await fetch(`https://swapi.dev/api/people/${id}/`);
   const data = response.json();
   return data;
 }
